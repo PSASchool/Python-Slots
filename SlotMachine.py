@@ -43,10 +43,13 @@ class Machine:
         self.vcmd = (self.main_window.register(self.validate),
                 '%d', '%i', '%P', '%s', '%S', '%v', '%V', '%W')
         
+        self.deposit_value = tkinter.StringVar()
+        
         self.deposit = tkinter.Entry(self.main_window,
-                                         width=5, validate='key', validatecommand=self.vcmd)
+                                         width=5, validate='key', validatecommand=self.vcmd,
+                                         textvariable=self.deposit_value, state='disabled')
         self.deposit.grid(row=3, column=0, padx=100)
-        self.deposit.focus()
+        self.deposit_value.set("50")
         # create a variable and make it equal a String Variable
         self.dep_value = tkinter.StringVar()
         
@@ -118,7 +121,8 @@ class Machine:
         #retrieve main deposit
         self.pot = int(self.deposit.get())
         self.dep_value.set(self.pot)
-        
+        self.pot_value.set(self.deposit_value.get())
+
         # remove beginning grids
         self.deposit_label.grid_remove()
         self.deposit.grid_remove()
