@@ -59,7 +59,7 @@ class Machine:
                                      command=self.deposit_pot)
         self.dep_button.grid(row=5, column=0)
         
-        self.coins_won_label = tkinter.Label(self.main_window, text="Coins Won: ",
+        self.coins_won_label = tkinter.Label(self.main_window, text="Rubees Won: ",
                                                 font=("Helvetica", 12))
         self.coins_won_label.grid(row=6, sticky='w', padx=90)                
         # create a variable and make it equal a String Variable
@@ -211,7 +211,7 @@ class Machine:
         else:
             # make sure bet is between 1 and 4 coins        
             if bet < 1 or bet > 4 or bet is None:
-                tkinter.messagebox.showwarning("Hey there", "Cannot have 0 coins or more than 4 coins")            
+                tkinter.messagebox.showwarning("Hey there", "Cannot have 0 rubees or more than 4 rubees")            
             # else if 
             else:
                 #call wheels to get images
