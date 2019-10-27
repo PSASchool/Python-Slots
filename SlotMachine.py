@@ -210,8 +210,8 @@ class Machine:
                 self.main_window.destroy()
         else:
             # make sure bet is between 1 and 4 coins        
-            if bet < 1 or bet > 4 or bet is None:
-                tkinter.messagebox.showwarning("Hey there", "Cannot have 0 rubees or more than 4 rubees")            
+            if bet is None:
+                tkinter.messagebox.showwarning("Notice", "You have to make a bet.")            
             # else if 
             else:
                 #call wheels to get images
