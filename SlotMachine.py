@@ -7,9 +7,31 @@ from tkinter import *
 import tkinter.messagebox
 from winsound import *
 import wheel
+import json
+import requests
+
+teamname = None
+teamid = None
+server_url = "http://192.168.20.218:5000"
 
 class Machine:
-    def __init__(self):       
+    def __init__(self):
+
+        try:
+            with open('teaminfo.json', 'r') as teaminfojson:
+                teaminfo = json.load(teaminfojson)
+                teamname = teaminfo['name']
+                teamid = teaminfo['id']
+        except FileNotFoundError:
+            print("The following information is required for scoring. You will not have to input this information again.")
+            teaminfo = {}
+            teamname = input("Team Name: ")
+            teamid = input("Team ID (0-XXX): ")
+            teaminfo['name'] = teamname
+            teaminfo['id'] = teamid
+            with open('teaminfo.json', 'w') as teaminfojson:
+                json.dump(teaminfo, teaminfojson)
+
         # Create the main window.
         self.main_window = tkinter.Tk()
         
@@ -265,13 +287,14 @@ class Machine:
 #create cash out method
 #-----------------------------------------------------------------------------------------------------------------------------   
     def cash__out(self):
-        tkinter.messagebox.showinfo("Thank you!", "Thank you for playing. Please take your check")
+        tkinter.messagebox.showinfo("Score Sent", "Your final pot has been sent to the scoreboard. Play again to try and earn more!")
         
-        reciept = open("winnings.txt", "w")
-        reciept.write( "Thank you for playing!\n");
-        reciept.write( "Here's your winnings!\n$ ");
-        reciept.write(str(self.pot));
-        reciept.close()
+        with open('cashout_logs.txt', 'a+') as cashoutlogs:
+            cashoutlogs.write("Cashed out with " + str(self.pot) + "\n")
+
+        data = {'name': teamname, 'id': teamid, 'score': str(self.pot)}
+
+        requests.post(url=server_url, data=data)
         
         self.main_window.destroy()
 
