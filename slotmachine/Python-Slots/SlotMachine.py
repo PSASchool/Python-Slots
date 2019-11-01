@@ -5,7 +5,8 @@ Created on Nov 28, 2016
 '''
 from tkinter import *
 import tkinter.messagebox
-from winsound import *
+from pydub import AudioSegment
+from pydub.playback import play
 import wheel
 import json
 import requests
@@ -107,9 +108,6 @@ class Machine:
         self.is_checked = IntVar()
         self.check_sound = Checkbutton(self.main_window, text="Disable sound", onvalue=1, offvalue=0, variable=self.is_checked)
         self.check_sound.grid(row=8, column=0)
-        
-        # create slot machine sound variable
-        self.play = lambda: PlaySound('slotMachine.wav', SND_FILENAME)
         
         # create cash out button
         self.cash_out = tkinter.Button(self.main_window, \
@@ -241,7 +239,8 @@ class Machine:
                 # check if check box is checked        
                 if not self.is_checked.get():    
                     # play sound
-                    self.play()
+                    sound = AudioSegment.from_wav("slotMachine.wav")
+                    play(sound)
                  
                 #decrement total by input bet   
                 self.pot -= bet
