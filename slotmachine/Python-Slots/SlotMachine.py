@@ -5,15 +5,15 @@ Created on Nov 28, 2016
 '''
 from tkinter import *
 import tkinter.messagebox
-from pydub import AudioSegment
-from pydub.playback import play
 import wheel
 import json
+import simpleaudio as sa
 import requests
 
 teamname = None
 teamid = None
 server_url = "http://192.168.20.218:5000"
+game_name = "Slot Machine"
 
 class Machine:
     def __init__(self):
@@ -72,7 +72,10 @@ class Machine:
                                          width=5, validate='key', validatecommand=self.vcmd,
                                          textvariable=self.deposit_value, state='disabled')
         self.deposit.grid(row=3, column=0, padx=100)
-        self.deposit_value.set("50")
+        if game_name != "Slot Machine":
+            self.deposit_value.set("1")
+        else:
+            self.deposit_value.set("50")
         # create a variable and make it equal a String Variable
         self.dep_value = tkinter.StringVar()
         
@@ -226,8 +229,8 @@ class Machine:
         win = 0 
 
         if bet > self.pot:
-                tkinter.messagebox.showerror("Sorry!", "No money") 
-                self.main_window.destroy()
+                tkinter.messagebox.showerror("You don't have enough money to bet that much!") 
+                
         else:
             # make sure bet is between 1 and 4 coins        
             if bet is None:
@@ -239,8 +242,8 @@ class Machine:
                 # check if check box is checked        
                 if not self.is_checked.get():    
                     # play sound
-                    sound = AudioSegment.from_wav("slotMachine.wav")
-                    play(sound)
+                    wave_obj = sa.WaveObject.from_wave_file("slotMachine.wav")
+                    play_obj = wave_obj.play()
                  
                 #decrement total by input bet   
                 self.pot -= bet
