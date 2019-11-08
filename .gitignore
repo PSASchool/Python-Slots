@@ -101,3 +101,5 @@ ENV/
 .mypy_cache/
 .vscode/settings.json
 slotmachine/Python-Slots/cashout_logs.txt
+slotmachine/Python-Slots/cashout_logs.txt
+slotmachine/Python-Slots/teaminfo.json
