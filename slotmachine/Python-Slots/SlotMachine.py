@@ -7,7 +7,6 @@ from tkinter import *
 import tkinter.messagebox
 import wheel
 import json
-import simpleaudio as sa
 import requests
 
 teamname = None
@@ -239,11 +238,6 @@ class Machine:
             else:
                 #call wheels to get images
                 self.wheels()
-                # check if check box is checked        
-                if not self.is_checked.get():    
-                    # play sound
-                    wave_obj = sa.WaveObject.from_wave_file("slotMachine.wav")
-                    play_obj = wave_obj.play()
                  
                 #decrement total by input bet   
                 self.pot -= bet
