@@ -299,5 +299,4 @@ class Machine:
         requests.post(url=server_url, data=data)
         
         self.main_window.destroy()
-
 machine = Machine()
