@@ -285,6 +285,6 @@ class Machine:
 
         with open('teaminfo.json', 'r') as teaminfo:
             teaminfo = json.load(teaminfo)
-            data = {'name': teaminfo['name'], 'id': teaminfo['id'], 'score': int(self.pot)}
+            data = {'name': teaminfo['name'], 'id': teaminfo['id'], 'score': int(self.pot), 'uuid': str(teaminfo['uuid'])}
             r = requests.post(server_url, data=data)
 machine = Machine()
