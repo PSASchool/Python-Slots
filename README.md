@@ -11,4 +11,5 @@ A GUI slot machine written in Python utilizing its Tkinter GUI package.
 7. Copy and paste the following, replacing teamname, teamid, and teamuuid with their proper value.
 
   `{"name": "teamname", "id": "teamid", "uuid": "teamuuid"}`
+
 8. Save the file using `^S`, `^X`.
