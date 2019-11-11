@@ -23,14 +23,7 @@ class Machine:
                 teamname = teaminfo['name']
                 teamid = teaminfo['id']
         except FileNotFoundError:
-            print("The following information is required for scoring. You will not have to input this information again.")
-            teaminfo = {}
-            teamname = input("Team Name: ")
-            teamid = input("Team ID (0-XXX): ")
-            teaminfo['name'] = teamname
-            teaminfo['id'] = teamid
-            with open('teaminfo.json', 'w') as teaminfojson:
-                json.dump(teaminfo, teaminfojson)
+            print("This machine has not been configured. Please see Mr. Durand.")
 
         # Create the main window.
         self.main_window = tkinter.Tk()
