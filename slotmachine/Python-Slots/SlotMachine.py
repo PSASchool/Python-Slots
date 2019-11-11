@@ -287,10 +287,11 @@ class Machine:
         
         with open('cashout_logs.txt', 'a+') as cashoutlogs:
             cashoutlogs.write("Cashed out with " + str(self.pot) + "\n")
-
-        data = {'name': teamname, 'id': teamid, 'score': str(self.pot)}
-
-        requests.post(url=server_url, data=data)
         
         self.main_window.destroy()
+
+        with open('teaminfo.json', 'r') as teaminfo:
+            teaminfo = json.load(teaminfo)
+            data = {'name': teaminfo['name'], 'id': teaminfo['id'], 'score': int(self.pot)}
+            r = requests.post(server_url, data=data)
 machine = Machine()
