@@ -8,22 +8,24 @@ import tkinter.messagebox
 import wheel
 import json
 import requests
+import os
+import sys
 
-teamname = None
-teamid = None
 server_url = "http://192.168.20.218:5000"
-game_name = "Slot Machine"
+
+def check_setup():
+    if os.environ.get('SM_TEAM_NAME') and os.environ.get('SM_TEAM_ID') and os.environ.get('SM_UUID'):
+        print("Your system is not correctly configured. You may proceed but you will not be scored. For assistance, please contact David Bootle or Mr. Durand.")
+        i = str.lower(input("Continue? y/N"))
+        if i == "n":
+            sys.exit()
+        else:
+            return
 
 class Machine:
     def __init__(self):
 
-        try:
-            with open('teaminfo.json', 'r') as teaminfojson:
-                teaminfo = json.load(teaminfojson)
-                teamname = teaminfo['name']
-                teamid = teaminfo['id']
-        except FileNotFoundError:
-            print("This machine has not been configured. Please see Mr. Durand.")
+        check_setup()
 
         # Create the main window.
         self.main_window = tkinter.Tk()
@@ -64,10 +66,8 @@ class Machine:
                                          width=5, validate='key', validatecommand=self.vcmd,
                                          textvariable=self.deposit_value, state='disabled')
         self.deposit.grid(row=3, column=0, padx=100)
-        if game_name != "Slot Machine":
-            self.deposit_value.set("1")
-        else:
-            self.deposit_value.set("50")
+        
+        self.deposit_value.set("50")
         # create a variable and make it equal a String Variable
         self.dep_value = tkinter.StringVar()
         
@@ -283,8 +283,10 @@ class Machine:
         
         self.main_window.destroy()
 
-        with open('teaminfo.json', 'r') as teaminfo:
-            teaminfo = json.load(teaminfo)
-            data = {'name': teaminfo['name'], 'id': teaminfo['id'], 'score': int(self.pot), 'uuid': str(teaminfo['uuid'])}
+        if os.environ.get('SM_TEAM_NAME') and os.environ.get('SM_TEAM_ID') and os.environ.get('SM_UUID'):
+            data = {'name': os.environ['SM_TEAM_NAME'], 'id': os.environ['SM_TEAM_ID'], 'score': int(self.pot), 'uuid': os.environ['SM_UUID']}
             r = requests.post(server_url, data=data)
+            sys.exit()
+        else:
+            print("An error occured and your score could not be sent.")
 machine = Machine()
