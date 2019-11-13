@@ -14,7 +14,7 @@ import sys
 server_url = "http://192.168.20.218:5000"
 
 def check_setup():
-    if os.environ.get('SM_TEAM_NAME') and os.environ.get('SM_TEAM_ID') and os.environ.get('SM_UUID'):
+    if not os.environ.get('SM_TEAM_NAME') or not os.environ.get('SM_TEAM_ID') or not os.environ.get('SM_UUID'):
         print("Your system is not correctly configured. You may proceed but you will not be scored. For assistance, please contact David Bootle or Mr. Durand.")
         i = str.lower(input("Continue? y/N"))
         if i == "n":
