@@ -2,44 +2,36 @@
 A GUI slot machine written in Python utilizing its Tkinter GUI package.
 
 ## Installation
-Run the following commands in a bash terminal, preferably in the user's home directory.
+To get started, create a team on the scoreboard. Then run the following commands:
 ```bash
+sudo nano /etc/environment
+```
+Add the following lines, substituting text in brackets for the value it represents:
+```
+SM_TEAM_NAME="{teamname}"
+SM_TEAM_ID="{teamid}"
+SM_UUID="{uuid}"
+```
+Press `^S` then `^X` to save the file and exit. Restart the machine.
+
+When the machine is back up, run the following commands in terminal.
+```bash
+cd ~
 git clone https://github.com/PSASchool/Python-Slots.git
 cd Python-Slots
 . slotmachine/bin/activate
 sudo apt-get install python3-tk
 cd slotmachine/Python-Slots
-export SM_TEAM_NAME="{teamname}"
-export SM_TEAM_ID="{teamid}"
-export SM_UUID="{uuid}"
 python3 SlotMachine.py
 ```
 
 ### Note
 In order to get the uuid of the team, it must be created on the scoreboard. The easiest way to get it is to open the scoreboard on the virtual machine and copy and paste the uuid.
 
-## Game Modes
-There are several game modes built into the game in the form of the
-`SM_MODE` environment variable. In order to set these codes, run
+## Testing Environment Variable Setup
+It's a good idea to test and make sure that the setup has worked correctly. In order to do this, run the following commands in the terminal. Each command should output the value you entered earlier in setup.
 ```bash
-export SM_MODE=mode
+printenv SM_TEAM_NAME
+printenv SM_TEAM_ID
+printenv SM_UUID
 ```
-These commands can be run by ssh anywhere on the host machine.
-
-The modes are listed below:
-### Normal
-```bash
-export SM_MODE=normal
-```
-The game will run normally. Used to disable other gamemodes.
-### Low Starting Deposit
-```bash
-export SM_MODE=low-starting-deposit
-```
-Low starting deposit will start the player off with 1 coin instead of 50.
-
-### Disabled
-```bash
-export SM_MODE=disabled
-```
-The game will be disabled, and will not run.
