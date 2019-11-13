@@ -16,6 +16,7 @@ Press `^S` then `^X` to save the file and exit. Restart the machine.
 
 When the machine is back up, run the following commands in terminal.
 ```bash
+sudo apt-get install git
 cd ~
 git clone https://github.com/PSASchool/Python-Slots.git
 cd Python-Slots
