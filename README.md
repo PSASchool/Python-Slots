@@ -20,11 +20,11 @@ sudo apt-get install git
 cd ~
 git clone https://github.com/PSASchool/Python-Slots.git
 cd Python-Slots
-. slotmachine/bin/activate
-sudo apt-get install python3-tk
-cd slotmachine/Python-Slots
-python3 SlotMachine.py
+setup.sh
 ```
+The automated setup will run, installing necessary files and setting up the launcher. Go to the desktop and double-click on the "Run Slot Machine" icon. This should start running the slot machine.
+
+Congragulations, setup is now complete!
 
 ### Note
 In order to get the uuid of the team, it must be created on the scoreboard. The easiest way to get it is to open the scoreboard on the virtual machine and copy and paste the uuid.
