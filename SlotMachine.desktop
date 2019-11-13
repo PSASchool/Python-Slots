@@ -3,7 +3,7 @@
 [Desktop Entry]
 Version=1.0
 Type=Application
-Terminal=true
+Terminal=false
 Exec=sh -c "~/Python-Slots/slotmachine/launcher.sh"
 Name=Run Slot Machine
 Comment=Starts the slot machine application.
