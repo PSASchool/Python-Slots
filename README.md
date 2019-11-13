@@ -20,7 +20,7 @@ sudo apt-get install git
 cd ~
 git clone https://github.com/PSASchool/Python-Slots.git
 cd Python-Slots
-setup.sh
+. setup.sh
 ```
 The automated setup will run, installing necessary files and setting up the launcher. Go to the desktop and double-click on the "Run Slot Machine" icon. This should start running the slot machine.
 
