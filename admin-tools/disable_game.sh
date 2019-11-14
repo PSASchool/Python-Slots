@@ -2,7 +2,7 @@ echo "Enter the time followed by m for minutes and s for seconds. ex) Enter 10m 
 read -p "Time to disable (0 is indefinite): " t
 read -p "Reason for disable: " reason
 
-printf "true\n$reason" > ~/admin-tools/disabled
+printf "true\n$reason\n$t" > ~/admin-tools/disabled
 if [ $t != 0 ]
 then
     sh -c "sleep $t; echo 'false' > ~/admin-tools/disabled" &
