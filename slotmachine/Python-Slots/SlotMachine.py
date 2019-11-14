@@ -13,6 +13,16 @@ import sys
 server_url = "http://192.168.20.218:5000"
 
 def check_setup():
+    with open('~/admin-tools/disabled', 'r') as disabled:
+        if disabled[0] == "true":
+            reason = disabled[1]
+            time = disabled[2]
+            time = time.replace("s", " seconds")
+            time = time.replace("m", " minutes")
+            print(f"Your game has been disabled by the administrators for {time}.")
+            print("Reason: " + reason)
+            print("")
+            print("Press ENTER to quit.")
     if not os.environ.get('SM_TEAM_NAME') or not os.environ.get('SM_TEAM_ID') or not os.environ.get('SM_UUID'):
         print("Your system is not correctly configured. You may proceed but you will not be scored. For assistance, please contact David Bootle or Mr. Durand.")
         i = str.lower(input("Continue? y/N"))
@@ -223,6 +233,8 @@ class Machine:
                 time = time.replace("m", " minutes")
                 print(f"Your game has been disabled by the administrators for {time}.")
                 print("Reason: " + reason)
+                print("")
+                print("Press ENTER to quit.")
         # get user entry
         bet = int(self.entry.get())
         win = 0 
