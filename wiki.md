@@ -19,6 +19,7 @@ Clicking the "Cash Out" button will end the game and send your pot to the scoreb
 
 ## Rules
 1. Hacking the game itself is allowed, but simply changing the sent score is not allowed.
-2. Deleting or modification of the admin-tools folder (or any of it's files) or disabling ssh is not allowed. It will result in disqualification.
+2. Deleting, modification, or execution of any files in the admin-tools folder may result in disqualification.
 3. Changing of scoring systems or other systems that identify your team information is not recommended as your score will not be sent to the scoreboard.
-4. You may not change any user settings.
+4. You may not change any user settings such as passwords or usernames.
+5. You may not move the location of any game files.
