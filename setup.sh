@@ -1,6 +1,7 @@
 cd ~/Python-Slots
 . slotmachine/bin/activate
 mv SlotMachine.desktop ~/Desktop/SlotMachine.desktop
+mv wiki.html ~/Desktop/README.html
 chmod a+x ~/Desktop/SlotMachine.desktop
 chmod 700 ~/Desktop/SlotMachine.desktop
 chmod a+x ~/Python-Slots/slotmachine/launcher.sh
