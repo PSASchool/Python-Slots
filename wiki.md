@@ -18,7 +18,8 @@ Clicking the "Cash Out" button will end the game and send your pot to the scoreb
 **Note:** The scoreboard does not keep track of high scores! If you send a low score to the scoreboard, it will overwrite your previous score, even if your previous score was higher! You cannot undo sending your score.
 
 ## Rules
-1. Hacking the game itself is allowed, but simply changing the sent score is not allowed.
+1. Hacking the game itself is allowed.
+2. Changing the score sending system to send a higher score is allowed, but if you get caught you will recieve a punishment based on the administrators judgement.
 2. Deleting, modification, or execution of any files in the admin-tools folder may result in disqualification.
 3. Changing of scoring systems or other systems that identify your team information is not recommended as your score will not be sent to the scoreboard.
 4. You may not change any user settings such as passwords or usernames.
