@@ -9,4 +9,5 @@ chmod a+x ~/Python-Slots/slotmachine/launcher.sh
 chmod 700 ~/Python-Slots/slotmachine/launcher.sh
 gsettings set org.gnome.nautilus.preferences executable-text-activation launch
 sudo apt-get install python3-tk
+mv ~/Python-Slots/admin-tools ~/admin-tools
 cd ~/Python-Slots/slotmachine/Python-Slots
