@@ -20,3 +20,6 @@ sudo apt-get install python3-tk
 # install admin-tools
 mv ~/Python-Slots/admin-tools ~/admin-tools
 cd ~/Python-Slots/slotmachine/Python-Slots
+if ![-f ~/admin-tools/disabled]; then
+    echo "false" > ~/admin-tools/disabled
+fi
