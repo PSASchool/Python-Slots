@@ -6,7 +6,6 @@ Created on Nov 28, 2016
 from tkinter import *
 import tkinter.messagebox
 import wheel
-import json
 import requests
 import os
 import sys
@@ -215,13 +214,21 @@ class Machine:
         third_wheel = Label(self.main_window, image=third_image)
         third_wheel.grid(row=1, sticky="E")   
 #-----------------------------------------------------------------------------------------------------------------------------
-    def spin_it(self):        
+    def spin_it(self):
+        with open('~/admin-tools/disabled', 'r') as disabled:
+            if disabled[0] == "true":
+                reason = disabled[1]
+                time = disabled[2]
+                time = time.replace("s", " seconds")
+                time = time.replace("m", " minutes")
+                print(f"Your game has been disabled by the administrators for {time}.")
+                print("Reason: " + reason)
         # get user entry
         bet = int(self.entry.get())
         win = 0 
 
         if bet > self.pot:
-                tkinter.messagebox.showerror("You don't have enough money to bet that much!") 
+                tkinter.messagebox.showerror("Notice", "You don't have enough money.") 
                 
         else:
             # make sure bet is between 1 and 4 coins        
