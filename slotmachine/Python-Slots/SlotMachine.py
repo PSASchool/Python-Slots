@@ -9,14 +9,17 @@ import wheel
 import requests
 import os
 import sys
+import json
 
 server_url = "http://192.168.20.218:5000"
 
 def check_setup():
-    with open('~/admin-tools/disabled', 'r') as disabled:
-        if disabled[0] == "true":
-            reason = disabled[1]
-            time = disabled[2]
+    home = os.path.expanduser("~")
+    with open(home + '/admin-tools/disabled', 'r') as disabled:
+        disabled = json.load(disabled)
+        if disabled['disabled'] == "true":
+            reason = disabled['reason']
+            time = disabled['time']
             time = time.replace("s", " seconds")
             time = time.replace("m", " minutes")
             print(f"Your game has been disabled by the administrators for {time}.")
