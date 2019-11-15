@@ -1,2 +1,2 @@
-printf "false" > ~/admin-tools/disabled
+printf "{'disabled': 'false'}" > ~/admin-tools/disabled
 echo "Game enabled."
