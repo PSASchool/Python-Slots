@@ -21,6 +21,4 @@ sudo apt-get install python3-tk
 mkdir ~/admin-tools
 mv ~/Python-Slots/admin-tools/* ~/admin-tools
 cd ~/Python-Slots/slotmachine/Python-Slots
-if ! test -f ~/admin-tools/disabled; then
-    echo "false" > ~/admin-tools/disabled
-fi
+echo "{'disabled': 'false'}" > ~/admin-tools/disabled
