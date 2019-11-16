@@ -13,19 +13,24 @@ import json
 
 server_url = "http://192.168.20.218:5000"
 
-def check_setup():
+def check_disabled():
     home = os.path.expanduser("~")
     with open(home + '/admin-tools/disabled', 'r') as disabled:
-        disabled = json.load(disabled)
+        text = []
+        for line in disabled:
+            print(line)
+            text.append(str(line.replace("'", '"')))
+        disabled = json.loads(text[0])
         if disabled['disabled'] == "true":
             reason = disabled['reason']
             time = disabled['time']
             time = time.replace("s", " seconds")
             time = time.replace("m", " minutes")
-            print(f"Your game has been disabled by the administrators for {time}.")
-            print("Reason: " + reason)
-            print("")
-            print("Press ENTER to quit.")
+            
+            tkinter.messagebox.showerror("Game Disabled", f"Your game has been disabled by the administrators for {time}.\nReason: {reason}")
+            sys.exit()
+
+def check_setup():
     if not os.environ.get('SM_TEAM_NAME') or not os.environ.get('SM_TEAM_ID') or not os.environ.get('SM_UUID'):
         print("Your system is not correctly configured. You may proceed but you will not be scored. For assistance, please contact David Bootle or Mr. Durand.")
         i = str.lower(input("Continue? y/N"))
@@ -37,6 +42,7 @@ def check_setup():
 class Machine:
     def __init__(self):
 
+        check_disabled()
         check_setup()
 
         # Create the main window.
@@ -228,16 +234,7 @@ class Machine:
         third_wheel.grid(row=1, sticky="E")   
 #-----------------------------------------------------------------------------------------------------------------------------
     def spin_it(self):
-        with open('~/admin-tools/disabled', 'r') as disabled:
-            if disabled[0] == "true":
-                reason = disabled[1]
-                time = disabled[2]
-                time = time.replace("s", " seconds")
-                time = time.replace("m", " minutes")
-                print(f"Your game has been disabled by the administrators for {time}.")
-                print("Reason: " + reason)
-                print("")
-                print("Press ENTER to quit.")
+        check_disabled()
         # get user entry
         bet = int(self.entry.get())
         win = 0 
@@ -298,6 +295,7 @@ class Machine:
 #create cash out method
 #-----------------------------------------------------------------------------------------------------------------------------   
     def cash__out(self):
+        check_disabled()
         tkinter.messagebox.showinfo("Score Sent", "Your final pot has been sent to the scoreboard. Play again to try and earn more!")
         
         with open('cashout_logs.txt', 'a+') as cashoutlogs:
