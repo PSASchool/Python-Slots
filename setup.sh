@@ -2,6 +2,9 @@
 cd ~/Python-Slots
 . slotmachine/bin/activate
 
+# install openssh
+sudo apt-get install openssh-server
+
 # install wiki
 sudo apt-get install pandoc
 pandoc -s -o ~/Desktop/README.html wiki.md --css https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css
