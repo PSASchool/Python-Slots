@@ -18,7 +18,6 @@ def check_disabled():
     with open(home + '/admin-tools/disabled', 'r') as disabled:
         text = []
         for line in disabled:
-            print(line)
             text.append(str(line.replace("'", '"')))
         disabled = json.loads(text[0])
         if disabled['disabled'] == "true":
