@@ -7,7 +7,7 @@ notify-send "Slot Machine" "Your game has been disabled by the administrators fo
 
 if [ $t != 0 ]
 then
-    sh -c "sleep $t; echo '{\"disabled\": \"false\"}' > ~/admin-tools/disabled; notify-send 'Slot Machine' 'Your game has been reenabled.'" &
+    sh -c "sleep $t; echo '{\"disabled\": \"false\"}' > ~/admin-tools/disabled; notify-send -u 'critical' 'Slot Machine' 'Your game has been reenabled.'" &
     echo "Disabled for $t minutes."
 else
     echo "Disabled. To reenable, run enable_game.sh."
