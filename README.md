@@ -2,7 +2,9 @@
 A GUI slot machine written in Python utilizing its Tkinter GUI package.
 
 ## Installation
-To get started, create a team on the scoreboard. Then run the following commands:
+Create a new virtual machine.
+
+Create a team on the [scoreboard]('https://192.168.20.218:5000'). Then run the following commands on the machine's terminal:
 ```bash
 sudo nano /etc/environment
 ```
