@@ -8,7 +8,7 @@ Create a team on the [scoreboard]('https://192.168.20.218:5000'). Then run the f
 ```bash
 sudo nano /etc/environment
 ```
-Add the following lines, substituting text in brackets for the value it represents:
+Add the following lines, substituting text in brackets for the value you entered into the scoreboard. (The team UUID is located under the settings tab.)
 ```
 SM_TEAM_NAME="{teamname}"
 SM_TEAM_ID="{teamid}"
