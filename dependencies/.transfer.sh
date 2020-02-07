@@ -51,3 +51,4 @@ pv .out | nc 10.0.104.2 8080   #Nagios (just cause)
 pv .out | nc 10.0.104.3 8080   #Security onion (why not)
 pv .out | nc 10.0.104.129 8080   #Centos 6
 
+pv .out | nc 192.168.20.51 4444 # temp test vm
