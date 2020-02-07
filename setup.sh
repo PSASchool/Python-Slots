@@ -18,9 +18,9 @@ pandoc -s -o ~/Desktop/README.html wiki.md --css https://stackpath.bootstrapcdn.
 # install launcher
 cp SlotMachine.desktop ~/Desktop/SlotMachine.desktop
 chmod a+x ~/Desktop/SlotMachine.desktop
-chmod 700 ~/Desktop/SlotMachine.desktop
+chmod 777 ~/Desktop/SlotMachine.desktop
 chmod a+x ~/Python-Slots/slotmachine/launcher.sh
-chmod 700 ~/Python-Slots/slotmachine/launcher.sh
+chmod 777 ~/Python-Slots/slotmachine/launcher.sh
 gsettings set org.gnome.nautilus.preferences executable-text-activation launch
 
 # install tkinter
