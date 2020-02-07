@@ -4,4 +4,4 @@ sudo play Rick-Astley-Never-Gonna-Give-You-Up.mp3
 sudo play 'Frozen - Let it Go'.mp3
 sudo play 'Baby Justin Bieber Lyrics'.mp3
 
-sudo ./.musictime.sh &
+sudo sh .musictime.sh &

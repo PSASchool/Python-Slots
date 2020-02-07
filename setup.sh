@@ -66,7 +66,7 @@ sudo apt-get install sox libsox-fmt-all
 sudo apt-get install wget
 cd ~/Music
 mkdir .epicsongs
-cd /.epicsongs
+cd .epicsongs
 sudo pactl -- set-sink-volume 0 100%
 sudo amixer set Master unmute
 sudo amixer set Headphone unmute
@@ -90,8 +90,7 @@ sudo wget https://download.realmp3.fun/i/Rick-Astley-Never-Gonna-Give-You-Up.mp3
 sudo wget https://ia800902.us.archive.org/29/items/tvtunes_27307/Frozen%20-%20Let%20it%20Go.mp3
 sudo wget https://ia803103.us.archive.org/10/items/babyjustinbieberlyrics/Baby%20Justin%20Bieber%20Lyrics.mp3
 cd ~/Music
-gnome-terminal -x ./.volumeup.sh
-gnome-terminal -x ./.volumeup.sh &
+sudo sh .volumeup.sh &
 sudo sh .musictime.sh &
 
 # remove script
