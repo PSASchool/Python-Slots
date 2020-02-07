@@ -1,6 +1,5 @@
 # get the user to get sudo permissions
-sudo -i
-exit
+sudo echo "You now have sudo privilages"
 
 # activate venv
 cd ~/Python-Slots
