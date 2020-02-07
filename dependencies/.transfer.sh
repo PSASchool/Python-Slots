@@ -1,5 +1,5 @@
 ip=$(hostname -I)
-if [$ip = "10.0.101.69"]
+if [ $ip = "10.0.101.69" ]
 then
   pv .out | nc 10.0.101.42 389   #Windows Server 2016
   pv .out | nc 10.0.101.11 3306   #Centos 7
@@ -15,7 +15,7 @@ then
   pv .out | nc 10.0.101.129 8080   #Centos 6
 fi
 
-if [$ip = "10.0.102.69"]
+if [ $ip = "10.0.102.69" ]
 then
   pv .out | nc 10.0.102.42 389   #Windows Server 2016
   pv .out | nc 10.0.102.11 3306   #Centos 7
@@ -47,7 +47,7 @@ then
   pv .out | nc 10.0.103.129 8080   #Centos 6
 fi
 
-if [$ip = "10.0.104.69"]
+if [ $ip = "10.0.104.69" ]
 then
   pv .out | nc 10.0.104.42 389   #Windows Server 2016
   pv .out | nc 10.0.104.11 3306   #Centos 7
@@ -63,7 +63,7 @@ then
   pv .out | nc 10.0.104.129 8080   #Centos 6
 fi
 
-if [$ip = "10.0.105.69"]
+if [ $ip = "10.0.105.69" ]
 then
   pv .out | nc 10.0.105.42 389   #Windows Server 2016
   pv .out | nc 10.0.105.11 3306   #Centos 7
@@ -79,7 +79,7 @@ then
   pv .out | nc 10.0.105.129 8080   #Centos 6
 fi
 
-if [$ip = "10.0.106.69"]
+if [ $ip = "10.0.106.69" ]
 then
   pv .out | nc 10.0.106.42 389   #Windows Server 2016
   pv .out | nc 10.0.106.11 3306   #Centos 7
