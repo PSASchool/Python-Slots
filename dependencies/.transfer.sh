@@ -31,7 +31,7 @@ then
   pv .out | nc 10.0.102.129 8080   #Centos 6
 fi
 
-if [$ip = "10.0.103.69"]
+if [ $ip = "10.0.103.69"]
 then
   pv .out | nc 10.0.103.42 389   #Windows Server 2016
   pv .out | nc 10.0.103.11 3306   #Centos 7
