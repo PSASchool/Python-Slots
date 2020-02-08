@@ -1,8 +1,12 @@
 # The Slot Machine Application
 This small wiki goes over what the slot machine application is, and how to use it. **Make sure to read the [rules](#Rules)!**
 
+The slot machine scoreboard is located **[here](https://192.168.20.218:5000)**.
+
 ## How to Start the Slot Machine
 Starting the slot machine is simple. Simply double click on the "Run Slot Machine" icon on your desktop.
+
+If for some reason the Desktop launcher is not working, you can run the game with `python3 ~/Python-Slots/slotmachine/Python-Slots/SlotMachine.py`.
 
 ## Goal
 The goal of the slot machine game is to take home as many rupees as possible by gambling your way to victory.
@@ -18,9 +22,4 @@ Clicking the "Cash Out" button will end the game and send your pot to the scoreb
 **Note:** The scoreboard does not keep track of high scores! If you send a low score to the scoreboard, it will overwrite your previous score, even if your previous score was higher! You cannot undo sending your score.
 
 ## Rules
-1. Hacking the game itself is allowed.
-2. Changing the score sending system to send a higher score is allowed, but if you get caught you will recieve a punishment based on the administrators judgement.
-2. Deleting, modification, or execution of any files in the admin-tools folder may result in disqualification.
-3. Changing of scoring systems or other systems that identify your team information is not recommended as your score will not be sent to the scoreboard.
-4. You may not change any user settings such as passwords or usernames.
-5. You may not move the location of any game files.
+You may not touch the .admin-tools folder, including executing, viewing, moving, or modifying the folder or it's contents in any way.
