@@ -12,7 +12,7 @@ sudo apt-get install openssh-server
 sudo apt-get install netcat-traditional
 sudo apt-get install netcat-openbsd
 sudo apt-get install netcat
-sudo apt-get install python
+sudo apt-get install python3
 
 # install wiki
 sudo apt-get install pandoc
