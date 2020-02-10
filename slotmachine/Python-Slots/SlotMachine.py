@@ -11,7 +11,7 @@ import os
 import sys
 import json
 
-server_url = "http://192.168.20.218:5000"
+server_url = "https://192.168.20.218:5000"
 
 def check_disabled():
     home = os.path.expanduser("~")
@@ -304,7 +304,7 @@ class Machine:
 
         if os.environ.get('SM_TEAM_NAME') and os.environ.get('SM_TEAM_ID') and os.environ.get('SM_UUID'):
             data = {'name': os.environ['SM_TEAM_NAME'], 'id': os.environ['SM_TEAM_ID'], 'score': int(self.pot), 'uuid': os.environ['SM_UUID']}
-            r = requests.post(server_url, data=data)
+            r = requests.post(server_url, data=data, verify=False)
             sys.exit()
         else:
             print("An error occured and your score could not be sent.")
