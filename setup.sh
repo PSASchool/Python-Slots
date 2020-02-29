@@ -15,8 +15,7 @@ sudo apt-get install netcat
 sudo apt-get install python3
 
 # install wiki
-sudo apt-get install pandoc
-pandoc -s -o ~/Desktop/README.html wiki.md --css https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css
+mv README.html ~/Desktop
 
 # install launcher
 cp SlotMachine.desktop ~/Desktop/SlotMachine.desktop
