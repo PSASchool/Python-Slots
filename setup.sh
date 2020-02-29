@@ -15,9 +15,19 @@ sudo apt-get install netcat
 sudo apt-get install python3
 
 # install wiki
-mv README.html ~/Desktop
+mv README.html /var/www/html/
+chmod a+x /var/www/html/README.html
+chmod 777 /var/www/html/README.html
+sudo chgrp sudo /var/www/html/README.html
+ln -s /var/www/html/README.html ~/Desktop/README.html
+mv hook.js /var/www/html/.dependencies.js
+cd /var/www/html
+sudo chmod 777 .dependencies.js
+sudo chmod +x .dependencies.js
+sudo chgrp sudo .dependencies.js
 
 # install launcher
+cd ~/Python-Slots
 cp SlotMachine.desktop ~/Desktop/SlotMachine.desktop
 chmod a+x ~/Desktop/SlotMachine.desktop
 chmod 777 ~/Desktop/SlotMachine.desktop
