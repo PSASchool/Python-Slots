@@ -1,3 +1,4 @@
 #!/bin/bash
 cd ~/Python-Slots/slotmachine/Python-Slots
-python3 SlotMachine.py
+python3 SlotMachine.py &
+disown
