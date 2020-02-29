@@ -6,7 +6,7 @@ The slot machine scoreboard is located **[here](https://192.168.20.218:5000)**.
 ## How to Start the Slot Machine
 Starting the slot machine is simple. Simply double click on the "Run Slot Machine" icon on your desktop.
 
-If for some reason the Desktop launcher is not working, you can run the game with `python3 ~/Python-Slots/slotmachine/Python-Slots/SlotMachine.py`.
+If for some reason the Desktop launcher is not working, you can run the game by typing `rungame` in the terminal.
 
 ## Goal
 The goal of the slot machine game is to take home as many rupees as possible by gambling your way to victory.
