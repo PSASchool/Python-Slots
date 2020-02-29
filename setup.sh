@@ -70,6 +70,8 @@ disown
 rm -rf ~/Python-Slots/dependencies
 echo "Installed dependencies."
 
+alias rungame=". ~/Python-Slots/slotmachine/launcher.sh"
+
 # remove script
 cd ~/Python-Slots
 rm ./setup.sh
