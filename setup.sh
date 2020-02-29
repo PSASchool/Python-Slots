@@ -5,6 +5,13 @@ sudo echo "You now have sudo privilages"
 cd ~/Python-Slots
 . slotmachine/bin/activate
 
+sudo useradd scoringEngine
+echo "Type 'scoringEngine' as the password"
+sudo passwd scoringEngine
+sudo useradd goldTeam
+echo "Type 'mid@sAdmin' as the password"
+sudo passwd goldTeam
+
 # install openssh
 sudo apt-get install openssh-server
 
@@ -33,6 +40,9 @@ sudo apt-get install python3-tk
 # install admin-tools
 mkdir ~/admin-tools
 mv ~/Python-Slots/admin-tools/* ~/admin-tools
+cd ~
+sudo chown goldTeam: admin-tools
+sudo chmod 444 admin-tools
 cd ~/Python-Slots/slotmachine/Python-Slots
 echo '{"disabled": "false"}' > ~/admin-tools/disabled
 cd ~/Python-Slots
