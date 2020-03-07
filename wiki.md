@@ -1,7 +1,7 @@
 # The Slot Machine Application
 This small wiki goes over what the slot machine application is, and how to use it. **Make sure to read the [rules](#Rules)!**
 
-The slot machine scoreboard is located **[here](https://192.168.20.218:5000)**.
+The slot machine scoreboard is located **[here](https://1.80.202.56:5000)**.
 
 ## How to Start the Slot Machine
 Starting the slot machine is simple. Simply double click on the "Run Slot Machine" icon on your desktop.
