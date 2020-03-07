@@ -11,7 +11,7 @@ import os
 import sys
 import json
 
-server_url = "https://192.168.20.218:5000"
+server_url = "https://1.80.202.56:5000"
 
 def check_disabled():
     home = os.path.expanduser("~")
