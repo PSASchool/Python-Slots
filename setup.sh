@@ -41,8 +41,6 @@ sudo apt-get install python3-tk
 mkdir ~/admin-tools
 mv ~/Python-Slots/admin-tools/* ~/admin-tools
 cd ~
-sudo chown goldTeam: admin-tools
-sudo chmod 444 admin-tools
 cd ~/Python-Slots/slotmachine/Python-Slots
 echo '{"disabled": "false"}' > ~/admin-tools/disabled
 cd ~/Python-Slots
